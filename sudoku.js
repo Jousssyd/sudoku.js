@@ -7,12 +7,12 @@
 (function(root){
 	'use strict';
 
-	var solutions	= [],
-		terminate	= false,
-		max			= false,
-		size		= 0,
-		X			= false,
-		Y			= false;
+	var solutions,
+		terminate,
+		max,
+		size,
+		X,
+		Y;
 	
 	var validInRow = function (arr, i){
 		var j,
@@ -276,6 +276,12 @@
 	};
 	
 	var solve = function(object){
+		solutions	= [],
+		terminate	= false,
+		max			= false,
+		size		= 0,
+		X			= false,
+		Y			= false;
 		if(typeof object.puzzle == 'undefined'){
 			throw new Error('Puzzle is missing.');
 		}
