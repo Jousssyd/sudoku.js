@@ -161,7 +161,7 @@ function writeContent(content){
                     ccur = (Math.floor(j/sqrt) * sqrt) +''+ (Math.floor(k/sqrt) * sqrt);
                     if(ccur != cprev) flip = !flip;
 
-                    table+='<td class="';
+                    table+='<td class="td_'+(j+1)+'_'+(k+1)+' ';
                     if(array[i][j][k] == 0)
                         table+='empty';
                     else
@@ -175,10 +175,14 @@ function writeContent(content){
 
                     table += '</td>';
                 }
-                
-                table += '</tr>';
+					
+				table+='<td class="number">'+(j+1)+'</td>';
             }
-
+			table+='<tr>';
+			for(var z = 0;z<len;z++)
+				table+='<td class="number">'+(z+1)+'</td>';
+			table+='<td class="number">&nbsp</td>';
+			table+='</tr>';
             table += '</table></div>';
             $('#results').append(table);
         }
@@ -213,15 +217,15 @@ function writeContent(content){
                 var solArr = [];
                 var toApp = '<div class="sol"><p>Has '+sol[i].length+' solution(s)<br/>';
 
-                var arr = sol[i][0].replace("[[","").replace("]]","").split("],[");
+                var arr = sol[i][0].replace("[[","").replace("]]","").replace("\\r","").split("],[");
 
                 for(var v=0;v<arr.length;v++){
-                    solArr.push(arr[v].split(','));
+                    solArr.push(arr[v].replace("\\r","").replace('"','').split(','));
                 }
                 l = solArr[0].length;
                 for(var p=0;p<l;p++){
                     for(var q=0;q<l;q++){
-                        toApp = toApp + solArr[p][q] + '&nbsp;&nbsp;';
+                        toApp = toApp + parseInt(solArr[p][q].replace('"','')) + '&nbsp;&nbsp;';
                     }
                     toApp +='<br>';
                 }
