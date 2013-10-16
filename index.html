@@ -1,31 +1,25 @@
 <html>
 	<head>
+		<title>Sudoku Solver</title>
+		<link rel="stylesheet" type="text/css" href="ui.css">
+		
 	</head>
 	<body>
-		See browser logs..
-		<script src="sudoku.js"></script>
-		<script>
-			var solutions = Sudoku(
-				{
-					'puzzle'		:[
-										[9,0,0,0,0,0,0,0,6],
-										[0,8,0,0,0,0,0,9],
-										[0,0,7,0,0,0,8],
-										[0,0,0,6,0,7],
-										[0,0,0,0,5],
-										[0,0,0,0,4],
-										[0,0,0,0,3],
-										[0,0,0,0,2],
-										[0,0,0,0,1]
-									],
-					'time'			: true,
-					'checkX'		: true,
-					'checkY'		: true,
-					'max_solutions' : 1
-				}
-			);
-
-			console.log(solutions);
-		</script>
+		<div id="next" class="arrow"><img src="arrownext.png" class="next"/></div>
+		<div id="prev" class="arrow"><img src="arrowprev.png" class="next"/></div>
+		<div id="file"><span id="select">Click To Select</span><br>Or Drag and Drop File<br /><br />
+			<input type="file" id="fileinput" name="fileinput" hidden/>
+			<a href="#" id="solve" class="button">Solve!</a><br /><br />
+		</div>
+		<div id="results"></div>
+		<div id="text"></div>
+		<div id="loading"><img src="477.gif" /></div>
+		<div id="hiddenDiv" hidden></div>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="floating.js"></script>
+	<script type="text/javascript" src="jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script type="text/javascript" src="sudoku.js"></script>
+	<script type="text/javascript" src="filereader.js"></script>
+	<script type="text/javascript" src="ui.js"></script>
 	</body>
 </html>

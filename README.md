@@ -14,7 +14,7 @@ How To
 --------------------
 1. Include the javascript file into your html
 2. Self-explanatory :
-````html
+<tt>
 	var solutions = Sudoku(
 		{
 			'puzzle'		:[
@@ -34,7 +34,7 @@ How To
 			'max_solutions' : 1	// optional defaults to max, 0 is also max
 		}
 	);	//returns an array of stringified arrays
-````
+</tt>
 
 
 Todos
@@ -48,7 +48,3 @@ Groupmates
 --------------------
 Edrian Roque
 Sherwin Jet Ferrer
-
-License
--------
-Licensed under [MIT](https://github.com/ravenjohn/.jarvis.js/blob/master/LICENSE)

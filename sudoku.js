@@ -316,4 +316,3 @@
 
 	root.Sudoku = solve;
 })(this);
-
